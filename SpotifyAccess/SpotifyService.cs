@@ -1,8 +1,8 @@
 ﻿using System.Net;
 using System.Text.Json;
+using DataTransferObjects;
 using DBAccess;
 using Newtonsoft.Json.Linq;
-using SpotifyAccess.ApiModels;
 using SpotifyAccess.Builder;
 using SpotifyAccess.Builder.StaticValues;
 using Authorization = System.Net.Authorization;

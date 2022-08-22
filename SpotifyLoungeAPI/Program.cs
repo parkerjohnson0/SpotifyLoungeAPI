@@ -12,6 +12,15 @@ namespace SpotifyLoungeAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddMvc(config =>
+            {
+                config.EnableEndpointRouting = false;
+            })
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.PropertyNamingPolicy = null;
+            });
+
             builder.Services.AddHttpClient();
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddSession(options =>

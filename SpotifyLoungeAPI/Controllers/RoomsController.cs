@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DataTransferObjects;
+using DBAccess;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace SpotifyLoungeAPI.Controllers
 {
@@ -13,15 +16,24 @@ namespace SpotifyLoungeAPI.Controllers
             _client = factory.CreateClient();
         }
         [HttpGet]
-        public IActionResult Rooms()
+        public async Task<ActionResult> Rooms([FromQuery] Room room)
         {
             //todo return list of rooms
             //todo refactor
-            var json = new
+
+            using (var connection = new DataAccess(ConnectionManager.GetConnectionString()))
             {
-                response = "test"
+                List<Room> rooms = await connection.GetRooms(room);
+                //return Ok(new JsonResult(rooms, new JsonSerializerOptions()
+                //{
+                //    PropertyNameCaseInsensitive = true,
+
+                //}));
+                return Ok(rooms);
             };
-            return Ok(json);
         }
+
+
+
     }
 }

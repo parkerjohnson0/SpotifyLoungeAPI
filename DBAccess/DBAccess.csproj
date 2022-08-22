@@ -12,6 +12,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\DataTransferObjects\DataTransferObjects.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Reference Include="SpotifyAccess">
         <HintPath>..\SpotifyLoungeAPI\bin\Debug\net6.0\SpotifyAccess.dll</HintPath>
       </Reference>

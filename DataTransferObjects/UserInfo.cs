@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace SpotifyAccess.ApiModels;
+namespace DataTransferObjects;
 
 public class UserInfo
 {

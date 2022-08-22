@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using Dapper;
-using SpotifyAccess.ApiModels;
+using DataTransferObjects;
 
 namespace DBAccess;
 
@@ -26,6 +26,22 @@ public class DataAccess : IDisposable
         int rowsAffected = await _connection.ExecuteAsync(StoredProcedures.sp_InsertUpdateUser, parameters, commandType: CommandType.StoredProcedure);
         return rowsAffected > 0;
     }
+    public async Task<List<Room>> GetRooms(Room room = null)
+    {
+
+        var parameters = new
+        {
+            RoomID = room?.RoomID ?? null,
+            SongName=room?.SongName ?? null,
+            SongArtist = room?.SongArtist ?? null
+        };
+        var rooms = await _connection.QueryAsync<Room>(StoredProcedures.sp_GetRooms, parameters, commandType: CommandType.StoredProcedure);
+        return rooms.ToList();
+    }
+    //public async Task<bool> InsertRoom(Room room)
+    //{
+
+    //}
 
     public void Dispose()
     {
