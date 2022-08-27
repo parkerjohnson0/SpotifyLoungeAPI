@@ -12,6 +12,6 @@ namespace DataTransferObjects
         public string? Name { get; set; }
         public string? SongName { get; set; }
         public string? SongArtist { get; set; }
-        public string? SongPicture { get; set; }
+        public string? AlbumPicture { get; set; }
     }
 }

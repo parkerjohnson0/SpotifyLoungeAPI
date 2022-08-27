@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyAccess", "SpotifyAcc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBAccess", "DBAccess\DBAccess.csproj", "{4E40F16F-51C7-4AC6-BF3D-875114DE9D71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransferObjects", "DataTransferObjects\DataTransferObjects.csproj", "{0158A15B-B742-4739-8FC1-06111F9FC644}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTransferObjects", "DataTransferObjects\DataTransferObjects.csproj", "{0158A15B-B742-4739-8FC1-06111F9FC644}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyLoungeRoomServer", "SpotifyLoungeRoomServer\SpotifyLoungeRoomServer.csproj", "{D0C0B382-AC49-40E4-870E-44E39B535DC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0158A15B-B742-4739-8FC1-06111F9FC644}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0158A15B-B742-4739-8FC1-06111F9FC644}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0158A15B-B742-4739-8FC1-06111F9FC644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0C0B382-AC49-40E4-870E-44E39B535DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C0B382-AC49-40E4-870E-44E39B535DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0C0B382-AC49-40E4-870E-44E39B535DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C0B382-AC49-40E4-870E-44E39B535DC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
