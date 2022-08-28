@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataTransferObjects;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SpotifyAccess;
@@ -23,8 +24,8 @@ namespace SpotifyLoungeAPI.Controllers
         public async Task Auth(string code)
         {
             SpotifyService spotify = new SpotifyService(_client);
-            string accessToken = await spotify.GetToken(code);
-            Response.Redirect("http://localhost:3000/"+ accessToken);
+            UserInfo user = await spotify.GetToken(code);
+            Response.Redirect("http://localhost:3000/"+ user.AccessToken + "/user/" + user.UserId);
             //return Ok("Success! You are now authorized with Spotify's API.");
         }
 

@@ -15,7 +15,7 @@ public class DataAccess : IDisposable
         _connection = new SqlConnection(connectionString);
     }
 
-    public async Task<bool> InsertUpdateUser(UserInfo userInfo)
+    public async Task<UserInfo> InsertUpdateUser(UserInfo userInfo)
     {
         var parameters = new
         {
@@ -23,8 +23,7 @@ public class DataAccess : IDisposable
             AccessToken = userInfo.AccessToken,
             DisplayName = userInfo.DisplayName
         };
-        int rowsAffected = await _connection.ExecuteAsync(StoredProcedures.sp_InsertUpdateUser, parameters, commandType: CommandType.StoredProcedure);
-        return rowsAffected > 0;
+         return await _connection.QuerySingleAsync<UserInfo>(StoredProcedures.sp_InsertUpdateUser, parameters, commandType: CommandType.StoredProcedure);
     }
     public async Task<List<Room>> GetRooms(Room room = null)
     {

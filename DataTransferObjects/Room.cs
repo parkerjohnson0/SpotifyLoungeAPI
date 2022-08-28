@@ -13,5 +13,6 @@ namespace DataTransferObjects
         public string? SongName { get; set; }
         public string? SongArtist { get; set; }
         public string? AlbumPicture { get; set; }
+        public int NumUsers { get; set; }
     }
 }

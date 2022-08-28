@@ -26,7 +26,7 @@ namespace SpotifyAccess
         /// Get auth token from Spotify API. Lasts one hour.
         /// </summary>
         /// <param name="code"></param>
-        public async Task<string> GetToken(string code)
+        public async Task<UserInfo> GetToken(string code)
         {
             IRequestBuilder request = new PostRequestBuilder("https://accounts.spotify.com/api/token");
                 request.Body(Body.Code, code)
@@ -41,9 +41,9 @@ namespace SpotifyAccess
             
             using (DataAccess connection = new DataAccess(ConnectionManager.GetConnectionString()))
             {
-                await connection.InsertUpdateUser(user);
+                user = await connection.InsertUpdateUser(user);
             }
-            return user.AccessToken;
+            return user;
         }
 
         private async Task<UserInfo?> GetUserInfo(string? accessToken)
