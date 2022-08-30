@@ -4,13 +4,13 @@ namespace DataTransferObjects;
 
 public class UserInfo
 {
-    public long UserId { get; set; }
+    public long? UserId { get; set; }
     [JsonPropertyName("display_name")]
-    public string DisplayName { get; set; }
+    public string? DisplayName { get; set; }
     [JsonPropertyName("id")]
-    public string Username { get; set; }
+    public string? Username { get; set; }
 
-    public string AccessToken { get; set; }
-    public long RoomID { get; set; }
+    public string? AccessToken { get; set; }
+    public long? RoomID { get; set; }
 
 }

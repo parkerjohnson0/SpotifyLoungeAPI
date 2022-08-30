@@ -19,9 +19,11 @@ public class DataAccess : IDisposable
     {
         var parameters = new
         {
+            UserID = userInfo.UserId,
             Username = userInfo.Username,
             AccessToken = userInfo.AccessToken,
-            DisplayName = userInfo.DisplayName
+            DisplayName = userInfo.DisplayName,
+            RoomID = userInfo.RoomID
         };
          return await _connection.QuerySingleAsync<UserInfo>(StoredProcedures.sp_InsertUpdateUser, parameters, commandType: CommandType.StoredProcedure);
     }

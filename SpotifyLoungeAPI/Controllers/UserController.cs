@@ -1,4 +1,5 @@
-﻿using DBAccess;
+﻿using DataTransferObjects;
+using DBAccess;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,13 +15,26 @@ namespace SpotifyLoungeAPI.Controllers
         {
             _client = factory.CreateClient();
         }
-        [HttpPut]
-        public async Task JoinRoom(int userID)
+        [HttpPut("Join")]
+        public async Task<IActionResult> JoinRoom([FromBody] UserInfo user)
         {
             using (var connection = new DataAccess(ConnectionManager.GetConnectionString()))
             {
-                //connection.
+
+                user = await connection.InsertUpdateUser(user);
             }
+            if (user.RoomID is not null)
+            {
+                return Ok(new
+                {
+                    Success = true
+                });
+
+            }
+            return Ok(new
+            {
+                Success = false
+            });
         }
     }
 }
