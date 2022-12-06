@@ -32,7 +32,33 @@ namespace SpotifyLoungeAPI.Controllers
                 return Ok(rooms);
             };
         }
-
+        [HttpPost("/api/Rooms/PlaybackState")]
+        public async Task<ActionResult> UpdatePlaybackState([FromBody] Room room)
+        {
+            using (var connection = new DataAccess(ConnectionManager.GetConnectionString()))
+            {
+                int ret = await connection.UpdateRoom(room);
+                return Ok(ret);
+            }
+        }
+        [HttpPost("/api/Rooms/{roomID}")]
+        public async Task<ActionResult> Update([FromBody] Room room)
+        {
+            using (var connection = new DataAccess(ConnectionManager.GetConnectionString()))
+            {
+                int ret = await connection.UpdateRoom(room);
+                return Ok(ret);
+            }
+        }
+        [HttpPost("/api/Rooms/")]
+        public async Task<ActionResult> Create([FromBody] Room room)
+        {
+            using (var connection = new DataAccess(ConnectionManager.GetConnectionString()))
+            {
+                int ret = await connection.CreateRoom(room);
+                return Ok(ret);
+            }
+        }
 
 
 

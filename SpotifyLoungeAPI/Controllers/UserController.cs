@@ -16,25 +16,24 @@ namespace SpotifyLoungeAPI.Controllers
             _client = factory.CreateClient();
         }
         [HttpPut("Join")]
-        public async Task<IActionResult> JoinRoom([FromBody] UserInfo user)
+        public async Task<IActionResult> JoinRoom([FromBody] RoomUserMap roomUser)
         {
             using (var connection = new DataAccess(ConnectionManager.GetConnectionString()))
             {
 
-                user = await connection.InsertUpdateUser(user);
+                await connection.InsertRoomUserMap(roomUser);
             }
-            if (user.RoomID is not null)
+            return Ok();
+        }
+        [HttpPut("Leave")]
+        public async Task<IActionResult> LeaveRoom([FromBody] RoomUserMap roomUser)
+        {
+            using (var connection = new DataAccess(ConnectionManager.GetConnectionString()))
             {
-                return Ok(new
-                {
-                    Success = true
-                });
 
+                await connection.DeleteRoomUserMap(roomUser);
             }
-            return Ok(new
-            {
-                Success = false
-            });
+            return Ok();
         }
     }
 }

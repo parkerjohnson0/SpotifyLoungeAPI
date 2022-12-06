@@ -21,7 +21,7 @@ namespace SpotifyLoungeRoomServer
             builder.Services.AddSignalR();
             var app = builder.Build();
             app.UseCors("ReactWebApp");
-            app.MapHub<ChatHub>("/chat");
+            app.MapHub<RoomHub>("/room");
             app.Run();
         }
     }

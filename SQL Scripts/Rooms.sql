@@ -15,6 +15,7 @@ CREATE TABLE [dbo].[Rooms](
 	[AlbumPicture] [varchar](255) NULL,
 	[SongArtist] [varchar](50) NULL,
 	[CurrentlyPlaying] [bit] NULL,
+	[ProgressMS] [BIGINT] NULL
  CONSTRAINT [PK_Rooms] PRIMARY KEY CLUSTERED 
 (
 	[RoomID] ASC
