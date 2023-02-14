@@ -1,7 +1,7 @@
 USE [SpotifyApp]
 GO
 
-/****** Object:  Table [dbo].[RoomSongQueue]    Script Date: 8/26/2022 11:07:35 PM ******/
+/****** Object:  Table [dbo].[RoomSongQueue]    Script Date: 2/14/2023 2:02:20 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -12,9 +12,11 @@ CREATE TABLE [dbo].[RoomSongQueue](
 	[RoomID] [bigint] NOT NULL,
 	[SongName] [varchar](50) NULL,
 	[SongArtist] [varchar](50) NULL,
-	[SongURI] [varchar](255) NULL,
 	[AlbumPicture] [varchar](255) NULL,
-	[Position] [int] NULL
+	[Position] [int] NULL,
+	[AlbumContext] [smallint] NULL,
+	[AlbumURI] [varchar](255) NULL,
+	[DurationMS] [bigint] NULL
 ) ON [PRIMARY]
 GO
 

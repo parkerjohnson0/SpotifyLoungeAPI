@@ -1,7 +1,7 @@
 USE [SpotifyApp]
 GO
 
-/****** Object:  Table [dbo].[RoomUserMap]    Script Date: 8/30/2022 6:43:10 PM ******/
+/****** Object:  Table [dbo].[RoomUserMap]    Script Date: 2/14/2023 2:02:12 PM ******/
 SET ANSI_NULLS ON
 GO
 

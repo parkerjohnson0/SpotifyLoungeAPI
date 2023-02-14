@@ -1,7 +1,7 @@
 USE [SpotifyApp]
 GO
 
-/****** Object:  Table [dbo].[Rooms]    Script Date: 8/26/2022 11:07:24 PM ******/
+/****** Object:  Table [dbo].[Rooms]    Script Date: 2/14/2023 2:02:40 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -15,7 +15,10 @@ CREATE TABLE [dbo].[Rooms](
 	[AlbumPicture] [varchar](255) NULL,
 	[SongArtist] [varchar](50) NULL,
 	[CurrentlyPlaying] [bit] NULL,
-	[ProgressMS] [BIGINT] NULL
+	[ProgressMS] [bigint] NULL,
+	[AlbumURI] [varchar](255) NULL,
+	[AlbumContext] [smallint] NULL,
+	[DurationMS] [bigint] NULL,
  CONSTRAINT [PK_Rooms] PRIMARY KEY CLUSTERED 
 (
 	[RoomID] ASC

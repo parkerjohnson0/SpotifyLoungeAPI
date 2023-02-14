@@ -1,7 +1,7 @@
 USE [SpotifyApp]
 GO
 
-/****** Object:  Table [dbo].[ChatMessages]    Script Date: 2/14/2023 1:37:08 PM ******/
+/****** Object:  Table [dbo].[ChatMessages]    Script Date: 2/14/2023 2:02:49 PM ******/
 SET ANSI_NULLS ON
 GO
 
