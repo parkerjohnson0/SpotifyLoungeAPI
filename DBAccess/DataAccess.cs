@@ -110,6 +110,14 @@ public class DataAccess : IDisposable
 
     }
 
+    public async Task DeleteRoom(long roomID)
+    {
+        var parameters = new
+        {
+            RoomID = roomID
+        };
+        await _connection.QueryAsync(StoredProcedures.sp_DeleteRoom, parameters, commandType: CommandType.StoredProcedure);
+    }
     public async Task<List<Room>> GetRooms(Room room = null)
     {
 

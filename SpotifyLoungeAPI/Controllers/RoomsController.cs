@@ -32,6 +32,16 @@ namespace SpotifyLoungeAPI.Controllers
                 return Ok(rooms);
             };
         }
+        [HttpDelete("/api/Rooms/{roomID}")]
+        public async Task<ActionResult> Delete(long roomID)
+        {
+            using (var connection = new DataAccess(ConnectionManager.GetConnectionString()))
+            {
+                await connection.DeleteRoom(roomID);
+            }
+            return Ok();
+            
+        }
         [HttpPost("/api/Rooms/PlaybackState")]
         public async Task<ActionResult> UpdatePlaybackState([FromBody] Room room)
         {

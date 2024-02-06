@@ -14,4 +14,5 @@ public static class StoredProcedures
     internal static string sp_InsertChatMessage = "sp_InsertChatMessage";
     internal static string sp_InsertRoomSongQueue = "sp_InsertRoomSongQueue";
     internal static string sp_StartNextSongInRoom = "sp_StartNextSongInRoom";
+    internal static string sp_DeleteRoom = "sp_DeleteRoom";
 }
